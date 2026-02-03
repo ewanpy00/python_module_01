@@ -1,6 +1,6 @@
 class Plant:
     def __init__(self, name, height, age):
-        self.name = name      # вызывает сеттер
+        self.name = name
         self.height = height
         self.age = age
 
@@ -53,7 +53,7 @@ def fill_garden(plants_data):
 
 def ft_garden_security():
     plants_data = [
-        ("Rose", -25, 30)
+        ("Rose", 5, 30)
     ]
     print("=== Garden Security System ===")
     plant = fill_garden(plants_data)
