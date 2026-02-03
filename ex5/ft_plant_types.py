@@ -101,7 +101,7 @@ def ft_plant_types():
     print("=== Garden Plant Types ===")
     flower = Flower("Rose", 25, 30, "red")
     flower.bloom()
-    flower = Flower("Sunflower", 40, 180, "yellow")
+    flower = Flower("Sunflower", -40, 180, "yellow")
     flower.bloom()
     oak = Tree("Oak", 500, 1825, 50)
     oak.produce_shade()
