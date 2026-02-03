@@ -1,20 +1,33 @@
 #Include a method create_garden_network() that works on the manager type itself????
 
 class GardenManager:
-    def __init__(self, name, score):
+    def __init__(self, name):
         self._name = name
-        self.score = score
+        self.score = 0
         self.gardens = []
-    def create_garden_network(cls, garden_data):
-        manager = cls()
 
+    @classmethod
+    def create_garden_network(cls, name, garden_data):
+        manager = cls(name)
+        for data in garden_data:
+            manager.gardens.append(data)
+            print{f"Added {data.name} to {manager._name}'s garden"}
+        return manager
         
-    def statistics(self)
-    def plant_collection(self)
+    def statistics(self):
+        print(f"=== {self._name}'s Garden Report ===")
+        print("Plants in garden:")
+        for garden in self.gardens:
+            garden.display()
+    #add display method to Plants
+    def statistics(self):
         
-class Garden:
-    def __init__(self, plant):
-        self._plant 
+# class Garden:
+#     def __init__(self):
+#         self._plant = []
+#     def addToGarden(self, plant):
+#         self._plant.append(plant)
+
 
 class Plant:
     def __init__(self, name, height, age):
@@ -124,9 +137,9 @@ class Tree(Plant):
 
 def ft_garden_analytics():
     garden_data = [
-        ("Oak", 100, 50, 50)
+        Tree("Oak", 100, 50, 50)
     ]
-    manager = GardenManager.create_garden_network(garden_data)
+    manager = GardenManager.create_garden_network("Alice", garden_data)
     print("=== Garden Management System Demo ===")
 
 if __name__ == "__main__":
