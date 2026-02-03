@@ -1,9 +1,20 @@
 #Include a method create_garden_network() that works on the manager type itself????
 
-class Garden_Manager:
-    def __init__(self, name, score)
+class GardenManager:
+    def __init__(self, name, score):
+        self._name = name
+        self.score = score
+        self.gardens = []
+    def create_garden_network(cls, garden_data):
+        manager = cls()
+
+        
     def statistics(self)
     def plant_collection(self)
+        
+class Garden:
+    def __init__(self, plant):
+        self._plant 
 
 class Plant:
     def __init__(self, name, height, age):
@@ -112,6 +123,10 @@ class Tree(Plant):
         print(f"{self._name} provides 78 square metersof shade")
 
 def ft_garden_analytics():
+    garden_data = [
+        ("Oak", 100, 50, 50)
+    ]
+    manager = GardenManager.create_garden_network(garden_data)
     print("=== Garden Management System Demo ===")
 
 if __name__ == "__main__":
