@@ -17,7 +17,7 @@ class Plant:
         startingAge (int): The initial age used to track growth.
     """
 
-    def __init__(self, name, height, years):
+    def __init__(self, name: str, height: int, years: int) -> None:
         """
         Initializes a Plant instance.
 
@@ -31,20 +31,20 @@ class Plant:
         self.years = years
         self.startingAge = years
 
-    def grow(self):
+    def grow(self) -> None:
         """
         Increases the plant's height by 1 centimeter.
         """
         self.height += 1
 
-    def age(self):
+    def age(self) -> None:
         """
         Increases the plant's age by one day and triggers growth.
         """
         self.years += 1
         self.grow()
 
-    def get_info(self):
+    def get_info(self) -> None:
         """
         Prints the current state of the plant.
 
@@ -54,7 +54,7 @@ class Plant:
         print(f"{self.name}: {self.height}cm, {self.years} days old")
 
 
-def ft_plant_growth():
+def ft_plant_growth() -> None:
     """
     Simulates plant growth over a fixed number of days.
 

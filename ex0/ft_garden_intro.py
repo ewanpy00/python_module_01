@@ -4,7 +4,7 @@ about a plant in a garden.
 """
 
 
-def ft_garden_intro():
+def ft_garden_intro() -> None:
     """
     Prints information about a plant in the garden.
 

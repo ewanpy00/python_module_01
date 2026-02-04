@@ -17,7 +17,7 @@ class Plant:
         age (int): The age of the plant in days.
     """
 
-    def __init__(self, name, height, age):
+    def __init__(self, name: str, height: int, age: int) -> None:
         """
         Initializes a Plant instance.
 
@@ -30,7 +30,7 @@ class Plant:
         self.height = height
         self.age = age
 
-    def display(self):
+    def display(self) -> None:
         """
         Prints information about the plant.
 
@@ -40,7 +40,7 @@ class Plant:
         print(f"Created: {self.name} ({self.height}cm, {self.age} days)")
 
 
-def ft_plant_factory():
+def ft_plant_factory() -> None:
     """
     Creates multiple Plant objects and displays their details.
 

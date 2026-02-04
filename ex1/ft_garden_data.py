@@ -16,7 +16,7 @@ class Plant:
         age (int): The age of the plant in days.
     """
 
-    def __init__(self, name, hight, age):
+    def __init__(self, name: str, hight: int, age: int) -> None:
         """
         Initializes a Plant instance.
 
@@ -29,7 +29,7 @@ class Plant:
         self.hight = hight
         self.age = age
 
-    def print_plant(self):
+    def print_plant(self) -> None:
         """
         Prints formatted information about the plant.
 
@@ -39,7 +39,7 @@ class Plant:
         print(f"{self.name}: {self.hight}cm, {self.age} days old")
 
 
-def ft_garden_data():
+def ft_garden_data() -> None:
     """
     Prints a registry of plants in the garden.
 

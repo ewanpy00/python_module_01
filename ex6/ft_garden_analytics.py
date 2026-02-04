@@ -1,6 +1,7 @@
 """
 Garden management system with analytics and plant hierarchy.
 """
+from __future__ import annotations
 
 
 class GardenManager:
@@ -8,7 +9,7 @@ class GardenManager:
 
     total_managers = 0
 
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         """Create a garden manager."""
         self.set_name(name)
         self.score = 0
@@ -17,11 +18,11 @@ class GardenManager:
         self.height_valid = True
         GardenManager.total_managers += 1
 
-    def set_name(self, name):
+    def set_name(self, name: str) -> None:
         """Set manager name."""
         self._name = name
 
-    def get_name(self):
+    def get_name(self) -> str:
         """Return manager name."""
         return self._name
 
@@ -29,7 +30,7 @@ class GardenManager:
         """Utility class for garden statistics."""
 
         @staticmethod
-        def count_plant_types(plants):
+        def count_plant_types(plants: list[Plant]) -> tuple[int, int, int]:
             """Count regular, flowering, and prize plants."""
             regular = flowering = prize = 0
             for plant in plants:
@@ -42,12 +43,12 @@ class GardenManager:
             return regular, flowering, prize
 
         @staticmethod
-        def count_plants(plants):
+        def count_plants(plants: list[Plant]) -> int:
             """Return number of plants."""
             return len(plants)
 
         @staticmethod
-        def validate_heights(plants):
+        def validate_heights(plants: list[Plant]) -> bool:
             """Check that all plant heights are valid."""
             for plant in plants:
                 if plant.get_height() < 0:
@@ -55,7 +56,7 @@ class GardenManager:
             return True
 
     @classmethod
-    def create_garden_network(cls, name, garden_data):
+    def create_garden_network(cls, name: str, garden_data: list[Plant]) -> GardenManager:
         """Create a manager and assign plants."""
         manager = cls(name)
         for plant in garden_data:
@@ -64,7 +65,7 @@ class GardenManager:
         manager.height_valid = cls.GardenStats.validate_heights(manager.plants)
         return manager
 
-    def grow_plants(self):
+    def grow_plants(self) -> None:
         """Grow all plants and update score."""
         print(f"\n{self.get_name()} is helping all plants grow...")
         for plant in self.plants:
@@ -72,7 +73,7 @@ class GardenManager:
             self.total_growth += 1
             self.score += plant.get_height()
 
-    def statistics(self):
+    def statistics(self) -> None:
         """Print garden statistics."""
         r, f, p = self.GardenStats.count_plant_types(self.plants)
         print(f"\n=== {self.get_name()}'s Garden Report ===")
@@ -88,46 +89,46 @@ class GardenManager:
 class Plant:
     """Base class for all plants."""
 
-    def __init__(self, name, height, age):
+    def __init__(self, name: str, height: int, age: int) -> None:
         """Create a plant."""
         self.set_name(name)
         self.set_height(height)
         self.set_age(age)
 
-    def grow(self):
+    def grow(self) -> None:
         """Increase height by 1 cm."""
         self._height += 1
         print(f"{self.get_name()} grew 1cm")
 
-    def get_name(self):
+    def get_name(self) -> str:
         """Return plant name."""
         return self._name
 
-    def set_name(self, name):
+    def set_name(self, name: str) -> None:
         """Set plant name."""
         self._name = name
 
-    def get_height(self):
+    def get_height(self) -> int:
         """Return plant height."""
         return self._height
 
-    def set_height(self, height):
+    def set_height(self, height: int) -> None:
         """Set plant height with validation."""
         if height < 0:
             raise ValueError("Height cannot be negative")
         self._height = height
 
-    def get_age(self):
+    def get_age(self) -> int:
         """Return plant age."""
         return self._age
 
-    def set_age(self, age):
+    def set_age(self, age: int) -> None:
         """Set plant age with validation."""
         if age < 0:
             raise ValueError("Age cannot be negative")
         self._age = age
 
-    def display(self):
+    def display(self) -> None:
         """Display plant information."""
         print(f"- {self.get_name()}: ", end="")
         print(f"{self.get_height()}cm, {self.get_age()} days")
@@ -136,24 +137,24 @@ class Plant:
 class FloweringPlant(Plant):
     """Plant with flowers."""
 
-    def __init__(self, name, height, age, color):
+    def __init__(self, name: str, height: int, age: int, color: str) -> None:
         """Create a flowering plant."""
         super().__init__(name, height, age)
         self.set_color(color)
 
-    def set_color(self, color):
+    def set_color(self, color: str) -> None:
         """Set flower color."""
         self._color = color
 
-    def get_color(self):
+    def get_color(self) -> str:
         """Return flower color."""
         return self._color
 
-    def bloom(self):
+    def bloom(self) -> None:
         """Display blooming status."""
         print("(blooming)", end="")
 
-    def display(self):
+    def display(self) -> None:
         """Display flowering plant information."""
         print(f"- {self.get_name()}: ", end="")
         print(f"{self.get_height()}cm, {self.get_color()} flowers ", end="")
@@ -164,20 +165,20 @@ class FloweringPlant(Plant):
 class PrizeFlower(FloweringPlant):
     """Flower with prize value."""
 
-    def __init__(self, name, height, age, color, prize_level):
+    def __init__(self, name: str, height: int, age: int, color: str, prize_level: int) -> None:
         """Create a prize flower."""
         super().__init__(name, height, age, color)
         self.set_prize_level(prize_level)
 
-    def set_prize_level(self, prize_level):
+    def set_prize_level(self, prize_level: int) -> None:
         """Set prize level."""
         self._prize_level = prize_level
 
-    def get_prize_level(self):
+    def get_prize_level(self) -> int:
         """Return prize level."""
         return self._prize_level
 
-    def display(self):
+    def display(self) -> None:
         """Display prize flower information."""
         print(f"- {self.get_name()}: ", end="")
         print(f"{self.get_height()}cm, {self.get_color()} flowers ", end="")
@@ -188,37 +189,37 @@ class PrizeFlower(FloweringPlant):
 class Tree(Plant):
     """Tree plant type."""
 
-    def __init__(self, name, height, age, trunk_diameter):
+    def __init__(self, name: str, height: int, age: int, trunk_diameter: int) -> None:
         """Create a tree."""
         super().__init__(name, height, age)
         self.set_trunk_diameter(trunk_diameter)
 
-    def set_trunk_diameter(self, trunk_diameter):
+    def set_trunk_diameter(self, trunk_diameter: int) -> None:
         """Set trunk diameter with validation."""
         if trunk_diameter < 0:
             raise ValueError("Trunk diameter cannot be negative")
         self._trunk_diameter = trunk_diameter
 
-    def get_trunk_diameter(self):
+    def get_trunk_diameter(self) -> int:
         """Return trunk diameter."""
         return self._trunk_diameter
 
-    def grow(self):
+    def grow(self) -> None:
         """Increase tree height by 1 cm."""
         self._height += 1
         print(f"{self.get_name()} Tree grew 1cm")
 
-    def display(self):
+    def display(self) -> None:
         """Display tree information."""
         print(f"- {self.get_name()} Tree: {self.get_height()}cm")
 
 
-def valid_height(manager1, manager2):
+def valid_height(manager1: GardenManager, manager2: GardenManager) -> bool:
     """Check if both gardens have valid plant heights."""
     return manager1.height_valid and manager2.height_valid
 
 
-def ft_garden_analytics():
+def ft_garden_analytics() -> None:
     """Run garden management demo."""
     garden_data = [
         [

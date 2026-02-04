@@ -14,7 +14,7 @@ class Plant:
     basic validation rules.
     """
 
-    def __init__(self, name, height, age):
+    def __init__(self, name: str, height: int, age: int) -> None:
         """
         Initializes a Plant instance using validated setters.
 
@@ -27,7 +27,7 @@ class Plant:
         self.set_height(height)
         self.set_age(age)
 
-    def get_name(self):
+    def get_name(self) -> str:
         """
         Returns the plant's name.
 
@@ -36,7 +36,7 @@ class Plant:
         """
         return self._name
 
-    def set_name(self, name):
+    def set_name(self, name: str) -> None:
         """
         Sets the plant's name.
 
@@ -46,7 +46,7 @@ class Plant:
         self._name = name
         print(f"Plant created: {self._name}")
 
-    def get_age(self):
+    def get_age(self) -> int:
         """
         Returns the plant's age.
 
@@ -55,7 +55,7 @@ class Plant:
         """
         return self._age
 
-    def set_age(self, age):
+    def set_age(self, age: int) -> None:
         """
         Sets the plant's age with validation.
 
@@ -67,7 +67,7 @@ class Plant:
         self._age = age
         print(f"Age updated: {self.get_age()} days [OK]")
 
-    def get_height(self):
+    def get_height(self) -> int:
         """
         Returns the plant's height.
 
@@ -76,7 +76,7 @@ class Plant:
         """
         return self._height
 
-    def set_height(self, height):
+    def set_height(self, height: int) -> None:
         """
         Sets the plant's height with validation.
 
@@ -96,7 +96,7 @@ class Plant:
         print(f"Height updated: {self.get_height()}cm [OK]")
 
 
-def display_garden(plant):
+def display_garden(plant: Plant) -> None:
     """
     Displays formatted information about a plant.
 
@@ -108,7 +108,7 @@ def display_garden(plant):
     print(f" {plant.get_age()} days)")
 
 
-def fill_garden(plants_data):
+def fill_garden(plants_data: list[tuple[str, int, int]]) -> Plant:
     """
     Creates a Plant object from provided plant data.
 
@@ -123,7 +123,7 @@ def fill_garden(plants_data):
     return plant
 
 
-def ft_garden_security():
+def ft_garden_security() -> None:
     """
     Runs a garden security validation scenario.
 
