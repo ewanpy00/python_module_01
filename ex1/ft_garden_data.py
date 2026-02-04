@@ -3,8 +3,10 @@ class Plant:
         self.name = name
         self.hight = hight
         self.age = age
+
     def print_plant(self):
         print(f"{self.name}: {self.hight}cm, {self.age} days old")
+
 
 def ft_garden_data():
     print("=== Garden Plant Registry ===")
@@ -14,6 +16,7 @@ def ft_garden_data():
     sunflower.print_plant()
     cactus = Plant("Cactus", 15, 120)
     cactus.print_plant()
+
 
 if __name__ == "__main__":
     ft_garden_data()
