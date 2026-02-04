@@ -49,7 +49,10 @@ class Plant:
 class Vegetable(Plant):
     """Plant subclass representing a vegetable."""
 
-    def __init__(self, name: str, height: int, age: int, harvest_season: str, nutrition_value: str) -> None:
+    def __init__(
+        self, name: str, height: int, age: int,
+        harvest_season: str, nutrition_value: str
+    ) -> None:
         """Create a vegetable with harvest season and nutrition."""
         super().__init__(name, height, age)
         self.set_harvest_season(harvest_season)
@@ -58,7 +61,8 @@ class Vegetable(Plant):
         print(f"\n{self.get_name()} (Vegetable): ", end="")
         print(f"{self.get_height()}cm, {self.get_age()} days, ", end="")
         print(f"{self.get_harvest_season()} season")
-        print(f"{self.get_name()} is rich in vitamin {self.get_nutrition_value()}")
+        print(f"{self.get_name()} is rich in vitamin", end="")
+        print(f" {self.get_nutrition_value()}")
 
     def get_harvest_season(self) -> str:
         """Return the harvest season."""
@@ -102,14 +106,18 @@ class Flower(Plant):
 
     def display(self) -> None:
         """Display flower info and bloom."""
-        print(f"- {self.get_name()}: {self.get_height()}cm, {self.get_color()} flowers")
+        print(f"- {self.get_name()}: {self.get_height()}", end="")
+        print(f"cm, {self.get_color()} flowers")
         self.bloom()
 
 
 class Tree(Plant):
     """Plant subclass representing a tree."""
 
-    def __init__(self, name: str, height: int, age: int, trunk_diameter: int) -> None:
+    def __init__(
+            self, name: str, height: int,
+            age: int, trunk_diameter: int
+    ) -> None:
         """Create a tree with trunk diameter."""
         super().__init__(name, height, age)
         self.set_trunk_diameter(trunk_diameter)

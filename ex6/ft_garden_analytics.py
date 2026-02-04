@@ -56,7 +56,9 @@ class GardenManager:
             return True
 
     @classmethod
-    def create_garden_network(cls, name: str, garden_data: list[Plant]) -> GardenManager:
+    def create_garden_network(
+        cls, name: str, garden_data: list[Plant]
+    ) -> GardenManager:
         """Create a manager and assign plants."""
         manager = cls(name)
         for plant in garden_data:
@@ -165,7 +167,10 @@ class FloweringPlant(Plant):
 class PrizeFlower(FloweringPlant):
     """Flower with prize value."""
 
-    def __init__(self, name: str, height: int, age: int, color: str, prize_level: int) -> None:
+    def __init__(
+            self, name: str, height: int, age: int,
+            color: str, prize_level: int
+    ) -> None:
         """Create a prize flower."""
         super().__init__(name, height, age, color)
         self.set_prize_level(prize_level)
@@ -189,7 +194,10 @@ class PrizeFlower(FloweringPlant):
 class Tree(Plant):
     """Tree plant type."""
 
-    def __init__(self, name: str, height: int, age: int, trunk_diameter: int) -> None:
+    def __init__(
+            self, name: str, height: int,
+            age: int, trunk_diameter: int
+    ) -> None:
         """Create a tree."""
         super().__init__(name, height, age)
         self.set_trunk_diameter(trunk_diameter)
