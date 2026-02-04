@@ -117,7 +117,7 @@ class Tree(Plant):
     def __init__(
             self, name: str, height: int,
             age: int, trunk_diameter: int
-    ) -> None:
+        ) -> None:
         """Create a tree with trunk diameter."""
         super().__init__(name, height, age)
         self.set_trunk_diameter(trunk_diameter)

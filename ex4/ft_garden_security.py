@@ -63,9 +63,13 @@ class Plant:
             ValueError: If the age is negative.
         """
         if age < 0:
-            raise ValueError(f"Age {age} days [REJECTED]")
-        self._age = age
-        print(f"Age updated: {self.get_age()} days [OK]")
+            print("\n Ivalid operation attempted ", end="")
+            print(f"age {age} [REJECTED]")
+            print("Security: Negative height rejected")
+            self._age = 0
+        else:
+            self._age = age
+            print(f"Age updated: {self.get_age()} days [OK]")
 
     def get_height(self) -> int:
         """
@@ -91,9 +95,9 @@ class Plant:
             print(f"height {height} [REJECTED]")
             print("Security: Negative height rejected")
             self._height = 0
-            return
-        self._height = height
-        print(f"Height updated: {self.get_height()}cm [OK]")
+        else:
+            self._height = height
+            print(f"Height updated: {self.get_height()}cm [OK]")
 
 
 def display_garden(plant: Plant) -> None:
