@@ -1,14 +1,53 @@
+"""
+This module demonstrates a simple plant factory.
+
+It creates multiple Plant objects from predefined data,
+displays their information, and reports the total number
+of plants created.
+"""
+
+
 class Plant:
+    """
+    Represents a plant with basic properties.
+
+    Attributes:
+        name (str): The name of the plant.
+        height (int): The height of the plant in centimeters.
+        age (int): The age of the plant in days.
+    """
+
     def __init__(self, name, height, age):
+        """
+        Initializes a Plant instance.
+
+        Args:
+            name (str): The name of the plant.
+            height (int): The height of the plant in centimeters.
+            age (int): The age of the plant in days.
+        """
         self.name = name
         self.height = height
         self.age = age
 
     def display(self):
+        """
+        Prints information about the plant.
+
+        Output format:
+            Created: <name> (<height>cm, <age> days)
+        """
         print(f"Created: {self.name} ({self.height}cm, {self.age} days)")
 
 
 def ft_plant_factory():
+    """
+    Creates multiple Plant objects and displays their details.
+
+    Uses predefined plant data to instantiate Plant objects,
+    prints their information, and outputs the total number
+    of plants created.
+    """
     plant_data = [
         ["Rose", 25, 30],
         ["Oak", 200, 365],

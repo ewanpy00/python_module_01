@@ -1,4 +1,21 @@
+"""
+This module demonstrates a simple example of printing information
+about a plant in a garden.
+"""
+
+
 def ft_garden_intro():
+    """
+    Prints information about a plant in the garden.
+
+    Plant attributes:
+    - name (str): The name of the plant.
+    - height (int): The height of the plant in centimeters.
+    - age (int): The age of the plant in days.
+
+    The function prints a welcome message, the plant's details,
+    and an end-of-program message.
+    """
     name = "Rose"
     height = 100
     age = 100
