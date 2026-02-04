@@ -72,6 +72,8 @@ class Plant:
             print(f"Invalid operation attempted: height {height} cm [REJECTED]")
             print("Security: Negative height rejected")
             exit()
+    def display(self):
+        print(f"{self._name}: {self._height}cm, {self._age} days")
 
 class Vegetable(Plant):
     def __init__(self, name, height, age, harvest_season, nutrition_value):
@@ -79,6 +81,10 @@ class Vegetable(Plant):
         self._harvest_season = harvest_season
         self._nutrition_value = nutrition_value
         # print(f"\nAdded {self._name} to Alice's garden")
+
+    def disply(self):
+        print(f"\n{self._name} (Vegetable): {self._height}cm, {self._age} days, {self._harvest_season} season")
+        print(f"{self._name} is rich in vitamin {self._nutrition_value}")
 
     @property
     def nutrition_value(self):
@@ -102,6 +108,10 @@ class FloweringPlant(Plant):
         self._color = color
         # print(f"\nAdded {self._name} to Alice's garden")
 
+    def display(self):
+        print(f"{self._name}: {self._height}cm, {self._color} flowers", end=' ')
+        self.bloom()
+
     @property
     def color(self):
         return self._color
@@ -111,7 +121,7 @@ class FloweringPlant(Plant):
         self._color = color
     
     def bloom(self):
-        print(f"{self._name} is blooming beautifully!")
+        print("(blooming)")
 
 class PrizeFlower(FloweringPlant):
     def __init__(self, name, color, prize_level):
@@ -124,16 +134,20 @@ class Tree(Plant):
         self._trunk_diameter = trunk_diameter
         # print(f"\nAdded {self._name} to Alice's garden")
 
+    def display(self):
+        printf(f"{self._name} Tree: {self._height}cm")
+
     @property
     def trunk_diameter(self):
         return self._trunk_diameter
-    
+
     @trunk_diameter.setter
     def trunk_diameter(self, trunk_diameter):
         self._trunk_diameter = trunk_diameter
 
     def produce_shade(self):
         print(f"{self._name} provides 78 square metersof shade")
+    
 
 def ft_garden_analytics():
     garden_data = [
