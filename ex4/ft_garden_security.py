@@ -59,13 +59,16 @@ class Plant:
         """
         Sets the plant's age with validation.
 
-        Raises:
-            ValueError: If the age is negative.
+        If a negative age is provided, the value is rejected
+        and the age is set to 0.
+
+        Args:
+            age (int): The age of the plant in days.
         """
         if age < 0:
-            print("\n Ivalid operation attempted ", end="")
+            print("\n Invalid operation attempted ", end="")
             print(f"age {age} [REJECTED]")
-            print("Security: Negative height rejected")
+            print("Security: Negative age rejected")
             self._age = 0
         else:
             self._age = age

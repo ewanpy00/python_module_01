@@ -115,20 +115,44 @@ class Plant:
         return self._height
 
     def set_height(self, height: int) -> None:
-        """Set plant height with validation."""
+        """
+        Set plant height with validation.
+
+        If a negative height is provided, the value is rejected
+        and the height is set to 0.
+
+        Args:
+            height (int): The height of the plant in centimeters.
+        """
         if height < 0:
-            raise ValueError("Height cannot be negative")
-        self._height = height
+            print("\nInvalid operation attempted ", end="")
+            print(f"height {height} [REJECTED]")
+            print("Security: Negative height rejected")
+            self._height = 0
+        else:
+            self._height = height
 
     def get_age(self) -> int:
         """Return plant age."""
         return self._age
 
     def set_age(self, age: int) -> None:
-        """Set plant age with validation."""
+        """
+        Set plant age with validation.
+
+        If a negative age is provided, the value is rejected
+        and the age is set to 0.
+
+        Args:
+            age (int): The age of the plant in days.
+        """
         if age < 0:
-            raise ValueError("Age cannot be negative")
-        self._age = age
+            print("\n Invalid operation attempted ", end="")
+            print(f"age {age} [REJECTED]")
+            print("Security: Negative age rejected")
+            self._age = 0
+        else:
+            self._age = age
 
     def display(self) -> None:
         """Display plant information."""
@@ -176,8 +200,22 @@ class PrizeFlower(FloweringPlant):
         self.set_prize_level(prize_level)
 
     def set_prize_level(self, prize_level: int) -> None:
-        """Set prize level."""
-        self._prize_level = prize_level
+        """
+        Set prize level with validation.
+
+        If a negative prize level is provided, the value is rejected
+        and the prize level is set to 0.
+
+        Args:
+            prize_level (int): The prize level value.
+        """
+        if prize_level < 0:
+            print("\n Invalid operation attempted ", end="")
+            print(f"prize level {prize_level} [REJECTED]")
+            print("Security: Negative prize level rejected")
+            self._prize_level = 0
+        else:
+            self._prize_level = prize_level
 
     def get_prize_level(self) -> int:
         """Return prize level."""
@@ -203,10 +241,22 @@ class Tree(Plant):
         self.set_trunk_diameter(trunk_diameter)
 
     def set_trunk_diameter(self, trunk_diameter: int) -> None:
-        """Set trunk diameter with validation."""
+        """
+        Set trunk diameter with validation.
+
+        If a negative diameter is provided, the value is rejected
+        and the diameter is set to 0.
+
+        Args:
+            trunk_diameter (int): The trunk diameter in centimeters.
+        """
         if trunk_diameter < 0:
-            raise ValueError("Trunk diameter cannot be negative")
-        self._trunk_diameter = trunk_diameter
+            print("\n Invalid operation attempted ", end="")
+            print(f"trunk diameter {trunk_diameter} [REJECTED]")
+            print("Security: Negative trunk diameter rejected")
+            self._trunk_diameter = 0
+        else:
+            self._trunk_diameter = trunk_diameter
 
     def get_trunk_diameter(self) -> int:
         """Return trunk diameter."""

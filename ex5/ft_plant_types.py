@@ -25,20 +25,44 @@ class Plant:
         return self._height
 
     def set_height(self, height: int) -> None:
-        """Set the plant height with validation."""
+        """
+        Set the plant height with validation.
+
+        If a negative height is provided, the value is rejected
+        and the height is set to 0.
+
+        Args:
+            height (int): The height of the plant in centimeters.
+        """
         if height < 0:
-            raise ValueError(f"Height {height} cm [REJECTED]")
-        self._height = height
+            print("\nInvalid operation attempted ", end="")
+            print(f"height {height} [REJECTED]")
+            print("Security: Negative height rejected")
+            self._height = 0
+        else:
+            self._height = height
 
     def get_age(self) -> int:
         """Return the plant age."""
         return self._age
 
     def set_age(self, age: int) -> None:
-        """Set the plant age with validation."""
+        """
+        Set the plant age with validation.
+
+        If a negative age is provided, the value is rejected
+        and the age is set to 0.
+
+        Args:
+            age (int): The age of the plant in days.
+        """
         if age < 0:
-            raise ValueError(f"Age {age} days [REJECTED]")
-        self._age = age
+            print("\n Invalid operation attempted ", end="")
+            print(f"age {age} [REJECTED]")
+            print("Security: Negative age rejected")
+            self._age = 0
+        else:
+            self._age = age
 
     def display(self) -> None:
         """Print basic plant information."""
@@ -130,10 +154,22 @@ class Tree(Plant):
         return self._trunk_diameter
 
     def set_trunk_diameter(self, diameter: int) -> None:
-        """Set trunk diameter with validation."""
+        """
+        Set trunk diameter with validation.
+
+        If a negative diameter is provided, the value is rejected
+        and the diameter is set to 0.
+
+        Args:
+            diameter (int): The trunk diameter in centimeters.
+        """
         if diameter < 0:
-            raise ValueError(f"Trunk diameter {diameter} cm [REJECTED]")
-        self._trunk_diameter = diameter
+            print("\n Invalid operation attempted ", end="")
+            print(f"trunk diameter {diameter} [REJECTED]")
+            print("Security: Negative trunk diameter rejected")
+            self._trunk_diameter = 0
+        else:
+            self._trunk_diameter = diameter
 
     def produce_shade(self) -> None:
         """Print shade information."""
