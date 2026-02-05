@@ -28,9 +28,6 @@ class Plant:
         """
         Set the plant height with validation.
 
-        If a negative height is provided, the value is rejected
-        and the height is set to 0.
-
         Args:
             height (int): The height of the plant in centimeters.
         """
@@ -49,9 +46,6 @@ class Plant:
     def set_age(self, age: int) -> None:
         """
         Set the plant age with validation.
-
-        If a negative age is provided, the value is rejected
-        and the age is set to 0.
 
         Args:
             age (int): The age of the plant in days.
@@ -141,7 +135,7 @@ class Tree(Plant):
     def __init__(
             self, name: str, height: int,
             age: int, trunk_diameter: int
-        ) -> None:
+    ) -> None:
         """Create a tree with trunk diameter."""
         super().__init__(name, height, age)
         self.set_trunk_diameter(trunk_diameter)
@@ -156,9 +150,6 @@ class Tree(Plant):
     def set_trunk_diameter(self, diameter: int) -> None:
         """
         Set trunk diameter with validation.
-
-        If a negative diameter is provided, the value is rejected
-        and the diameter is set to 0.
 
         Args:
             diameter (int): The trunk diameter in centimeters.

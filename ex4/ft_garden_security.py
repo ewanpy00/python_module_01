@@ -59,9 +59,6 @@ class Plant:
         """
         Sets the plant's age with validation.
 
-        If a negative age is provided, the value is rejected
-        and the age is set to 0.
-
         Args:
             age (int): The age of the plant in days.
         """
@@ -86,9 +83,6 @@ class Plant:
     def set_height(self, height: int) -> None:
         """
         Sets the plant's height with validation.
-
-        If a negative height is provided, the value is rejected
-        and the height is set to 0.
 
         Args:
             height (int): The height of the plant in centimeters.

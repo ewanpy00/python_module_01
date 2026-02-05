@@ -69,7 +69,8 @@ def ft_plant_growth() -> None:
         if i % 7 == 0:
             print(f"=== Day {i} ===")
             plant.get_info()
-            print(f"Growth this week: +{plant.height - plant.startingHeight}cm")
+            print("Growth this week: +", end="")
+            print(f"{plant.height - plant.startingHeight}cm")
         plant.age()
 
 

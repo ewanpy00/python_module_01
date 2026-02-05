@@ -118,9 +118,6 @@ class Plant:
         """
         Set plant height with validation.
 
-        If a negative height is provided, the value is rejected
-        and the height is set to 0.
-
         Args:
             height (int): The height of the plant in centimeters.
         """
@@ -139,9 +136,6 @@ class Plant:
     def set_age(self, age: int) -> None:
         """
         Set plant age with validation.
-
-        If a negative age is provided, the value is rejected
-        and the age is set to 0.
 
         Args:
             age (int): The age of the plant in days.
@@ -203,9 +197,6 @@ class PrizeFlower(FloweringPlant):
         """
         Set prize level with validation.
 
-        If a negative prize level is provided, the value is rejected
-        and the prize level is set to 0.
-
         Args:
             prize_level (int): The prize level value.
         """
@@ -243,9 +234,6 @@ class Tree(Plant):
     def set_trunk_diameter(self, trunk_diameter: int) -> None:
         """
         Set trunk diameter with validation.
-
-        If a negative diameter is provided, the value is rejected
-        and the diameter is set to 0.
 
         Args:
             trunk_diameter (int): The trunk diameter in centimeters.
